@@ -110,7 +110,7 @@ async function runEngine() {
           ? price
           : price * usdToInr;
 
-        if (change <= -1 && s >= 6) {
+        if (change <= -0.1) {
           output.push({
             symbol,
             change: change.toFixed(2),
