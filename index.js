@@ -19,6 +19,7 @@ let usdToInr = 83;
 async function fetchData() {
   const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbols.join(",")}`;
   const res = await axios.get(url);
+  console.log("API RESPONSE:", res.data);
   return res.data.quoteResponse.result;
 }
 
