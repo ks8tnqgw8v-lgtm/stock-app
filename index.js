@@ -5,7 +5,7 @@ const app = express();
 const API_KEY = "136d4519090d413292db1aeca73a93e4";
 
 // Stocks to track
-const symbols = ["AAPL", "MSFT", "GOOGL", "TSLA", "AMZN"];
+const symbols = ["AAPL", "MSFT"];
 
 let previousPrices = {};
 
@@ -32,7 +32,8 @@ app.get("/", async (req, res) => {
   let output = [];
 
   for (let symbol of symbols) {
-    const price = await getStockData(symbol);
+  await delay(800);
+  const price = await getStockData(symbol);
     if (!price) continue;
 
     if (previousPrices[symbol]) {
